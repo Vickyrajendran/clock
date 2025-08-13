@@ -1,0 +1,228 @@
+/* body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, #050505, #000);
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    background-image: radial-gradient(rgba(0,255,200,0.3) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: particles 25s linear infinite;
+    z-index: 0;
+}
+
+@keyframes particles {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-150px, -150px); }
+}
+
+#card {
+    position: relative;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    box-shadow: 0 0 40px rgba(0,255,200,0.7), inset 0 0 20px rgba(0,255,200,0.4);
+    z-index: 1;
+    animation: cardPulse 4s ease-in-out infinite;
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+#card::before, #card::after {
+    content: '';
+    position: absolute;
+    border: 2px solid rgba(0,255,200,0.4);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotateRing 10s linear infinite;
+}
+
+#card::before {
+    width: 280px;
+    height: 280px;
+    animation-direction: normal;
+}
+
+#card::after {
+    width: 320px;
+    height: 320px;
+    animation-direction: reverse;
+}
+
+@keyframes rotateRing {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes cardPulse {
+    0%, 100% { box-shadow: 0 0 40px rgba(0,255,200,0.7), inset 0 0 20px rgba(0,255,200,0.4); }
+    50% { box-shadow: 0 0 80px rgba(0,255,200,1), inset 0 0 30px rgba(0,255,200,0.6); }
+}
+
+#clock {
+    font-size: 2rem;
+    color: #00ffe0;
+    text-shadow: 0 0 20px #00ffe0, 0 0 40px #00ffd0;
+    animation: glowText 2s infinite alternate, floatText 3s ease-in-out infinite;
+}
+
+@keyframes glowText {
+    from { text-shadow: 0 0 10px #00ffe0; }
+    to { text-shadow: 0 0 25px #00ffd0; }
+}
+
+@keyframes floatText {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+#message {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    color: white;
+    text-shadow: 0 0 10px #00ffe0;
+    animation: fadeMessage 2s infinite alternate;
+}
+
+@keyframes fadeMessage {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
+
+#card:hover { 
+    transform: scale(1.05);
+    background: rgba(0, 255, 150, 0.15);
+} */
+    
+
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, #050505, #000);
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+}
+
+/* Floating particle background */
+body::before {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    background-image: radial-gradient(rgba(0,255,200,0.3) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: particles 25s linear infinite;
+    z-index: 0;
+}
+
+@keyframes particles {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-150px, -150px); }
+}
+
+/* Card with glowing effect */
+#card {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 40px rgba(0,255,200,0.7), inset 0 0 20px rgba(0,255,200,0.4);
+    z-index: 1;
+    animation: cardPulse 4s ease-in-out infinite;
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+/* Rotating hologram rings */
+#card::before, #card::after {
+    content: '';
+    position: absolute;
+    border: 2px solid rgba(0,255,200,0.4);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotateRing 10s linear infinite;
+    pointer-events: none;
+}
+
+#card::before {
+    width: 280px;
+    height: 280px;
+    animation-direction: normal;
+}
+
+#card::after {
+    width: 320px;
+    height: 320px;
+    animation-direction: reverse;
+}
+
+@keyframes rotateRing {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Pulsing card glow */
+@keyframes cardPulse {
+    0%, 100% { box-shadow: 0 0 40px rgba(0,255,200,0.7), inset 0 0 20px rgba(0,255,200,0.4); }
+    50% { box-shadow: 0 0 80px rgba(0,255,200,1), inset 0 0 30px rgba(0,255,200,0.6); }
+}
+
+/* Clock centered inside circle */
+#clock {
+    font-size: 2rem;
+    color: #00ffe0;
+    text-shadow: 0 0 20px #00ffe0, 0 0 40px #00ffd0;
+    animation: glowText 2s infinite alternate, floatText 3s ease-in-out infinite;
+}
+
+@keyframes glowText {
+    from { text-shadow: 0 0 10px #00ffe0; }
+    to { text-shadow: 0 0 25px #00ffd0; }
+}
+
+@keyframes floatText {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Message below clock */
+#message {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: white;
+    text-shadow: 0 0 10px #00ffe0;
+    animation: fadeMessage 2s infinite alternate;
+}
+
+@keyframes fadeMessage {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
+
+/* Hover effect */
+#card:hover { 
+    transform: scale(1.05);
+    background: rgba(0, 255, 150, 0.15);
+}
